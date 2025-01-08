@@ -1,0 +1,9 @@
+[submodule "nerucci_common"]
+	path = nerucci_common
+	url = https://github.com/regalen76/nerucci_common.git
+[submodule "nerucci_order"]
+	path = nerucci_order
+	url = https://github.com/regalen76/nerucci_order.git
+[submodule "nerucci_gateway"]
+	path = nerucci_gateway
+	url = https://github.com/regalen76/nerucci_gateway.git

@@ -1,0 +1,19 @@
+---
+version: "3.8"
+services:
+  gateway:
+    build:
+      context: ./nerucci_gateway
+      dockerfile: Dockerfile
+      target: dev
+    ports: [8080:8080]
+    env_file: [.env]
+    volumes: [./nerucci_gateway:/app]
+  orders:
+    build:
+      context: ./nerucci_order
+      dockerfile: Dockerfile
+      target: dev
+    ports: [2000:2000]
+    env_file: [.env]
+    volumes: [./nerucci_order:/app]
