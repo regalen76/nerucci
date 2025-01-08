@@ -1,5 +1,4 @@
 ---
-version: "3.8"
 services:
   gateway:
     build:
@@ -7,7 +6,7 @@ services:
       dockerfile: Dockerfile
       target: dev
     ports: [8080:8080]
-    env_file: [.env]
+    env_file: [./nerucci_gateway/.env]
     volumes: [./nerucci_gateway:/app]
   orders:
     build:
@@ -15,5 +14,5 @@ services:
       dockerfile: Dockerfile
       target: dev
     ports: [2000:2000]
-    env_file: [.env]
+    env_file: [./nerucci_order/.env]
     volumes: [./nerucci_order:/app]
