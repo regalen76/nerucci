@@ -6,7 +6,12 @@ services:
       dockerfile: Dockerfile
       target: dev
     ports: [8080:8080]
+    expose:
+      - 8080
     env_file: [./nerucci_gateway/.env]
+    environment:
+      - HTTP_ADDR=0.0.0.0:8080
+      - GRPC_ADDR=orders:2000
     volumes: [./nerucci_gateway:/app]
   orders:
     build:
@@ -15,4 +20,6 @@ services:
       target: dev
     ports: [2000:2000]
     env_file: [./nerucci_order/.env]
+    environment:
+      - GRPC_ADDR=0.0.0.0:2000
     volumes: [./nerucci_order:/app]
